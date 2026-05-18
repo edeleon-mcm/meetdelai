@@ -15,7 +15,7 @@ export function Footer() {
         <div className="space-y-3">
           <p className="font-display text-2xl text-ink">DELAI<span className="text-ink-faint">.</span></p>
           <p className="text-sm text-ink-muted max-w-xs">
-            Edwin De Leon. Builder of AI-native software. Holding company for Found, Modus, BiTES, HostGPT, and PAGE.
+            Elmer De Leon. AI consulting, fractional CTO, and full builds — backed by a portfolio of six AI products in production.
           </p>
         </div>
         <div>

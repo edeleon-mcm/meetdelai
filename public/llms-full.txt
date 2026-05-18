@@ -1,15 +1,15 @@
-# meetdelai.com — Edwin De Leon
+# meetdelai.com — Elmer De Leon
 
 **Site:** https://meetdelai.com
 **Brand:** DELAI (DeLeonAI)
-**Operator:** Edwin De Leon
+**Operator:** Elmer De Leon
 **Location:** South Florida
 
 ---
 
 ## Who
 
-Edwin De Leon is the founder of DELAI (DeLeonAI). Senior operator and builder who designs, codes, ships, and supports every product in the DELAI portfolio. Not a consulting firm — DELAI owns and runs each product end-to-end.
+Elmer De Leon is the founder of DELAI (DeLeonAI). Senior operator and builder who designs, codes, ships, and supports every product in the DELAI portfolio. Not a consulting firm — DELAI owns and runs each product end-to-end.
 
 DELAI = a portfolio of standalone AI products that share an intelligence layer (Found), a data layer (Supabase), and an infrastructure layer (Mastra agent runtime on Hostinger + EC2).
 

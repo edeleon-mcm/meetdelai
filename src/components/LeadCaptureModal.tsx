@@ -81,10 +81,10 @@ export function LeadCaptureModal({ open, onClose, source = 'website' }: Props) {
             <div>
               <p className="label-mono mb-2">Start a conversation</p>
               <h2 className="font-display text-headline-md text-ink">
-                Tell me what you're building.
+                What can I help you ship?
               </h2>
               <p className="mt-2 text-sm text-ink-muted">
-                Advisory, fractional CTO, build engagements. One reply, real answer.
+                Advisory, fractional CTO, or a full build. One reply, real answer — no drip sequences.
               </p>
             </div>
 

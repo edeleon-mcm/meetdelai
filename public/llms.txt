@@ -1,6 +1,6 @@
-# meetdelai.com — Edwin De Leon
+# meetdelai.com — Elmer De Leon · DELAI
 
-> Founder of DELAI (DeLeonAI). Builder of AI-native software. Holding company for Found, Modus, BiTES, HostGPT, PAGE, and Munchies. Senior operator who codes, ships, and supports every product end-to-end. Based in South Florida.
+> AI consulting, fractional CTO, and full-build engagements for founders shipping AI-native products. Backed by a portfolio of six AI products I run in production: Found, Modus, BiTES, HostGPT, PAGE, Munchies. Based in South Florida.
 
 DELAI is not a consulting firm — it's a portfolio of standalone AI products that share an intelligence layer (Found), a data layer (Supabase), and an infrastructure layer (Mastra agent runtime on Hostinger + EC2). The site is a React 19 SPA; for full content scrape `/llms-full.txt`.
 

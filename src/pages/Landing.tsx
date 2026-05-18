@@ -16,38 +16,59 @@ const PORTFOLIO: PortfolioItem[] = [
   {
     name: 'Found',
     tag: 'Personal AI',
-    blurb: 'The intelligence layer. Tracks every project, person, and decision across the portfolio so context never gets lost.',
+    blurb: 'Intelligence layer for operators. Tracks projects, people, and decisions so context never gets lost between sessions.',
     url: 'https://thefoundai.app',
   },
   {
     name: 'Modus',
     tag: 'Operator AI',
-    blurb: 'Engines for SMBs. Productized AI automations sold $2.5k setup + $500/mo. Single-tenant, goal-driven, real KPIs.',
+    blurb: 'Productized AI engines for SMBs — goal-driven automations sold as $2.5k setup + $500/mo.',
     url: 'https://modus-chi.vercel.app',
   },
   {
     name: 'BiTES',
     tag: 'Food intelligence',
-    blurb: 'AI food tracker — plate-photo nutrition, AI coach Lily, restaurant menu scanning. Live on iOS and Android.',
+    blurb: 'AI food tracker live on iOS + Android. Plate-photo nutrition, AI coach, menu scanning.',
     url: 'https://bites.mycloudmenu.com',
   },
   {
     name: 'HostGPT',
-    tag: 'Short-term rental copilot',
-    blurb: 'AI host for vacation rentals. Voice + chat + ops, white-labeled per property.',
+    tag: 'STR copilot',
+    blurb: 'AI host for short-term rentals. Voice + chat + ops, white-labeled per property.',
     url: 'https://myhostgpt.com',
   },
   {
     name: 'PAGE',
-    tag: 'Micro-merchant payments',
-    blurb: 'Acceptance layer. Stripe Connect Express for micro-merchants who don\'t want a full POS.',
+    tag: 'Micro payments',
+    blurb: 'Stripe Connect Express acceptance for micro-merchants who don\'t want a full POS.',
     url: 'https://meetpage.app',
   },
   {
     name: 'Munchies',
     tag: 'Food delivery',
-    blurb: 'WhatsApp-first ordering for restaurants. Uber Direct certified.',
+    blurb: 'WhatsApp-first restaurant ordering. Uber Direct certified.',
     url: 'https://munchies.pr',
+  },
+];
+
+const SERVICES = [
+  {
+    name: 'Advisory',
+    tag: 'Recurring sessions',
+    body: 'Bring me the hard calls. Architecture choices, build/buy decisions, agent design, hiring. Senior operator perspective from someone in the trenches every day.',
+    fit: 'Founders 0→1 on an AI-native product.',
+  },
+  {
+    name: 'Fractional CTO',
+    tag: '1–3 month engagement',
+    body: 'Embedded with your team to set up the engineering foundation — agent registry, deploy harness, telemetry, validation patterns — so you can ship without me after.',
+    fit: 'Seed-stage teams who need senior leadership without the full hire.',
+  },
+  {
+    name: 'Build engagement',
+    tag: 'DELAI builds it',
+    body: 'I design and build the product end-to-end. You get a working AI-native system, not a slide deck. Handoff when ready, or DELAI keeps running it.',
+    fit: 'Operators who know what they need but don\'t have an engineering team.',
   },
 ];
 
@@ -66,13 +87,14 @@ export function Landing() {
   return (
     <>
       <Seo
-        title="Edwin De Leon — DELAI"
-        description="Edwin De Leon builds AI-native software. DELAI is the holding company behind Found, Modus, BiTES, HostGPT, and PAGE."
+        title="DELAI — AI consulting that ships"
+        description="Elmer De Leon. AI consulting and fractional CTO for founders building AI-native products. Six products in production prove the playbook works."
         jsonLd={personSchema()}
       />
       <TopNav />
       <main>
         <Hero onCta={() => setOpen(true)} />
+        <Services onCta={() => setOpen(true)} />
         <Portfolio />
         <Approach />
         <FinalCta onCta={() => setOpen(true)} />
@@ -88,21 +110,22 @@ function Hero({ onCta }: { onCta: () => void }) {
     <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-20 sm:pt-32 pb-24 sm:pb-32">
       <p className="label-mono mb-8">DELAI · DeLeonAI</p>
       <h1 className="font-display text-headline-xl text-ink max-w-4xl">
-        I build AI-native software.<br />
-        <span className="italic text-ink-muted">One portfolio, one operator.</span>
+        AI consulting<br />
+        <span className="italic text-ink-muted">that ships.</span>
       </h1>
       <p className="mt-8 text-body-lg text-ink-muted max-w-2xl">
-        Edwin De Leon. Founder of DELAI — the holding company behind Found, Modus, BiTES,
-        HostGPT, and PAGE. I run the products end-to-end: design, code, ship, support.
+        I help founders and operators build AI-native products that survive production.
+        Advisory, fractional CTO, and full build engagements — backed by a portfolio
+        of six AI products I run end-to-end.
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
-        <button onClick={onCta} className="btn-primary">Work with me</button>
-        <Link to="/intelligence" className="btn-ghost">Read the writing</Link>
+        <button onClick={onCta} className="btn-primary">Start a conversation</button>
+        <Link to="#services" className="btn-ghost">See services</Link>
       </div>
       <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-        <Stat label="Active products" value="6" />
-        <Stat label="In production" value="4" />
+        <Stat label="Products in production" value="6" />
         <Stat label="AI agents shipped" value="30+" />
+        <Stat label="Years building" value="10+" />
         <Stat label="Based in" value="South Florida" />
       </div>
     </section>
@@ -118,19 +141,56 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
+function Services({ onCta }: { onCta: () => void }) {
+  return (
+    <section id="services" className="border-t border-line bg-bg-2">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
+        <p className="label-mono mb-6">Engagements</p>
+        <h2 className="font-display text-headline-lg text-ink max-w-2xl">
+          Three ways to work together.
+        </h2>
+        <p className="mt-6 text-body-md text-ink-muted max-w-2xl">
+          Pricing happens in conversation — every engagement scopes to your problem,
+          your team, and your timeline. I take a small number at a time.
+        </p>
+        <div className="mt-16 grid gap-px bg-line">
+          {SERVICES.map((s) => (
+            <div key={s.name} className="bg-bg-2 p-8 grid gap-4 md:grid-cols-[1fr_2fr]">
+              <div>
+                <h3 className="font-display text-2xl text-ink">{s.name}</h3>
+                <p className="label-mono mt-2">{s.tag}</p>
+              </div>
+              <div>
+                <p className="text-body-md text-ink-muted">{s.body}</p>
+                <p className="mt-4 font-mono text-mono-label text-ink-faint">
+                  Best fit: {s.fit}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12">
+          <button onClick={onCta} className="btn-primary">Tell me what you're building</button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Portfolio() {
   return (
-    <section className="border-t border-line bg-bg-2">
+    <section className="border-t border-line">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
           <div>
-            <p className="label-mono mb-6">The portfolio</p>
+            <p className="label-mono mb-6">Proof, not slides</p>
             <h2 className="font-display text-headline-lg text-ink">
-              Six products,<br />one operator.
+              Six AI products,<br />all in production.
             </h2>
             <p className="mt-6 text-body-md text-ink-muted max-w-md">
-              Each product is viable standalone. They share intelligence through Found,
-              data through Supabase, and infrastructure through the same Mastra agent layer.
+              I don't teach AI in theory — I ship it. Every product in the DELAI
+              portfolio is live, paying for itself, and built on the same agent
+              architecture I bring to client work.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -170,27 +230,27 @@ function Approach() {
   const principles = [
     {
       title: 'Discipline reachable from one place.',
-      body: 'Every agent flows through one Mastra registry. Every product writes to one Supabase. Every closeout updates one wiki. The gold-standard library is worthless if a wrapper sits next to it.',
+      body: 'Every agent flows through one registry. Every product writes to one database. The gold-standard library is worthless if a wrapper sits next to it — and that\'s the first thing I audit when I walk in.',
     },
     {
-      title: 'Build the sandbox first.',
-      body: 'I never gate on Apple entitlements, live API keys, custom domains, or vendor approvals. Mock the integration boundary and ship. The real key arrives after the demo works.',
+      title: 'Ship the sandbox first.',
+      body: 'I never gate on Apple entitlements, live API keys, custom domains, or vendor approvals. Mock the integration boundary and ship a working demo. The real keys arrive after the demo works.',
     },
     {
       title: 'Four PRs, one A-grade.',
-      body: 'PR-D for the harness first, then PR-A/B/C for capability. Closed-loop validation. Telemetry from day one. Audits drive the plan, not the other way around.',
+      body: 'PR-D for the harness first, then PR-A/B/C for capability. Closed-loop validation. Telemetry from day one. Audits drive the plan, not the other way around — I learned this shipping production AI, not reading about it.',
     },
     {
-      title: 'Y-Elmer audit on every initiative.',
-      body: 'Rate it against 7 YC AI-native principles before scoping. If the model is the product\'s only moat, the product is wrong.',
+      title: 'AI-native or nothing.',
+      body: 'If the model is the product\'s only moat, the product is wrong. I rate every initiative against seven YC AI-native principles before scoping work — and tell you honestly which products don\'t need an AI build at all.',
     },
   ];
   return (
-    <section className="border-t border-line">
+    <section className="border-t border-line bg-bg-2">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
         <p className="label-mono mb-6">How I work</p>
         <h2 className="font-display text-headline-lg text-ink max-w-2xl">
-          Operating principles that survived every product.
+          What you get when you work with me.
         </h2>
         <div className="mt-16 grid gap-12 md:grid-cols-2">
           {principles.map((p) => (
@@ -207,15 +267,16 @@ function Approach() {
 
 function FinalCta({ onCta }: { onCta: () => void }) {
   return (
-    <section className="border-t border-line bg-bg-2">
+    <section className="border-t border-line">
       <div className="mx-auto max-w-3xl px-5 sm:px-8 py-24 sm:py-32 text-center">
-        <p className="label-mono mb-6">Work with me</p>
+        <p className="label-mono mb-6">Let's talk</p>
         <h2 className="font-display text-headline-lg text-ink">
-          Advisory, fractional CTO,<br />or a full build.
+          You bring the problem.<br />
+          I'll bring the playbook.
         </h2>
         <p className="mt-6 text-body-md text-ink-muted max-w-xl mx-auto">
-          I take a small number of engagements at a time. If you're building an AI-native
-          product and want a senior operator who's done it, send a note.
+          One reply, real answer. No drip sequences, no discovery deck, no
+          "let me circle back with the team." It's just me.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button onClick={onCta} className="btn-primary">Start a conversation</button>

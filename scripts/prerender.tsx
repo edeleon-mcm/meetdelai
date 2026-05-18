@@ -78,7 +78,7 @@ function HomePage() {
             I build AI-native software.
           </h1>
           <p className="mt-8 text-body-lg text-ink-muted max-w-2xl">
-            Edwin De Leon. Founder of DELAI — the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.
+            Elmer De Leon. Founder of DELAI — the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.
           </p>
         </section>
         <section className="border-t border-line">
@@ -166,8 +166,8 @@ async function main() {
 
   writeRoute('/', applyTemplate({
     body: renderToStaticMarkup(<HomePage />),
-    title: 'Edwin De Leon — DELAI',
-    description: 'Edwin De Leon builds AI-native software. DELAI is the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.',
+    title: 'Elmer De Leon — DELAI',
+    description: 'Elmer De Leon builds AI-native software. DELAI is the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.',
     canonical: `${ORIGIN}/`,
   }));
   count++;

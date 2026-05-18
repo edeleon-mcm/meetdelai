@@ -68,12 +68,12 @@ function injectJsonLd(data?: Record<string, unknown> | Array<Record<string, unkn
 const PERSON: Record<string, unknown> = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Edwin De Leon',
+  name: 'Elmer De Leon',
   alternateName: 'DELAI',
   url: 'https://meetdelai.com',
-  jobTitle: 'Founder',
+  jobTitle: 'AI Consultant & Founder',
   worksFor: { '@type': 'Organization', name: 'DELAI (DeLeonAI)' },
-  description: 'Founder of DELAI. Builder of AI-native software. Portfolio includes Found, Modus, BiTES, HostGPT, and PAGE.',
+  description: 'AI consultant, fractional CTO, and full-build engineer. Founder of DELAI, operating six AI products in production (Found, Modus, BiTES, HostGPT, PAGE, Munchies).',
 };
 
 export function personSchema() {

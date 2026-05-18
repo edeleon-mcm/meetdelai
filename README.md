@@ -1,6 +1,6 @@
 # meetdelai.com
 
-Personal brand site for Edwin De Leon / DELAI. Founder showcase + portfolio + advisory CTA + writing archive.
+Personal brand site for Elmer De Leon / DELAI. Founder showcase + portfolio + advisory CTA + writing archive.
 
 ## Stack
 - React 19 + Vite 7 + TypeScript + Tailwind 3
