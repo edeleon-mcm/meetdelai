@@ -1,0 +1,87 @@
+# meetdelai.com — Edwin De Leon
+
+**Site:** https://meetdelai.com
+**Brand:** DELAI (DeLeonAI)
+**Operator:** Edwin De Leon
+**Location:** South Florida
+
+---
+
+## Who
+
+Edwin De Leon is the founder of DELAI (DeLeonAI). Senior operator and builder who designs, codes, ships, and supports every product in the DELAI portfolio. Not a consulting firm — DELAI owns and runs each product end-to-end.
+
+DELAI = a portfolio of standalone AI products that share an intelligence layer (Found), a data layer (Supabase), and an infrastructure layer (Mastra agent runtime on Hostinger + EC2).
+
+---
+
+## Portfolio
+
+### Found — Personal AI
+The intelligence layer for the portfolio. Tracks every project, person, decision, and signal across the entire DELAI ecosystem so context never gets lost between sessions. Powers the auto-memory and wiki ingest that the operator and the agents both consume.
+
+### Modus — Operator AI
+Productized AI automations sold as engines: $2.5k setup + $500/mo. Each engine = one deployed workflow for one customer, single-tenant, with explicit goal, KPIs, and channels. Engine #1 (aibiz-lead-triage) is live. Engine #2 (article generator) proved the factory pattern.
+
+### BiTES — Food intelligence
+Consumer AI food tracker. Plate-photo nutrition analysis (vision agent), AI coach Lily (Groq llama-3.3), restaurant menu scanning, USDA-grounded recipe generator. Live on iOS and Android via Capacitor. Stripe-monetized free + Pro tier.
+
+### HostGPT — Short-term rental copilot
+AI host for STR properties. Voice + chat + ops. White-labeled per property. Multi-agent orchestration across guest comms, cleaning ops, maintenance dispatch.
+
+### PAGE — Micro-merchant payments
+Stripe Connect Express acceptance layer for micro-merchants who don't want a full POS. Onboarding coach agent + support copilot + ops copilot. Auto-PR GitHub App for L3 incident resolution.
+
+### Munchies — Food delivery
+WhatsApp-first ordering for restaurants in Puerto Rico. Uber Direct certified. Twilio sandbox + production WhatsApp flows. Multi-location restaurant onboarding.
+
+---
+
+## How I work
+
+### Discipline reachable from one place
+Every agent flows through one Mastra registry. Every product writes to one Supabase. Every closeout updates one wiki. The gold-standard library is worthless if a wrapper sits next to it. When auditing, the question isn't "does it have a system prompt?" — it's "is the discipline reachable from one place?"
+
+### Build the sandbox first
+Never gate on Apple entitlements, live API keys, custom domains, or vendor approvals. Mock the integration boundary and ship. The real key arrives after the demo works.
+
+### Four PRs, one A-grade
+PR-D for the harness first, then PR-A/B/C for capability. Closed-loop validation. Telemetry from day one. Audits drive the plan, not the other way around.
+
+### Y-Elmer audit on every initiative
+Rate it against 7 YC AI-native principles before scoping. If the model is the product's only moat, the product is wrong.
+
+### Stack defaults
+- Frontend: React 19 + Vite 7 + TypeScript + Tailwind 3
+- Backend: Mastra (Hostinger for DELAI, EC2 for MCM products)
+- DB: Supabase
+- LLM: Groq (llama-3.3-70b-versatile) by default; GPT-4o for vision only
+- Media: fal.ai by default for image + video gen
+- Schedulers: Hostinger cron (`187.124.64.14`)
+
+---
+
+## Engagements
+
+I take a small number of engagements at a time. Three shapes:
+
+- **Advisory** — recurring sessions for founders building AI-native products. Architecture, hiring, build/buy calls, agent design.
+- **Fractional CTO** — embedded for 1–3 months to set up the engineering foundation (registry, agent layer, deploy harness) so the team can ship without me.
+- **Full build** — DELAI builds and ships the product, hands off (or runs it via Modus).
+
+Pricing happens in conversation — every engagement scopes to the specific problem.
+
+---
+
+## Contact
+
+- Email: hello@meetdelai.com
+- Form: https://meetdelai.com/?contact=1
+
+---
+
+## Site map
+
+- [Home](https://meetdelai.com/) — founder + portfolio + how I work
+- [Writing](https://meetdelai.com/intelligence) — essays on operator discipline + AI-native building
+- [Sitemap](https://meetdelai.com/sitemap.xml)

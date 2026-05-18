@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body {
+    background: #06080c;
+    color: #e6e8eb;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection { background: #e6e8eb; color: #06080c; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 border border-ink bg-ink px-6 py-3 font-body text-sm uppercase tracking-[0.12em] text-bg transition-colors duration-150
+           hover:bg-transparent hover:text-ink disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border border-ink-faint bg-transparent px-6 py-3 font-body text-sm uppercase tracking-[0.12em] text-ink transition-colors duration-150
+           hover:border-ink;
+  }
+  .label-mono {
+    @apply font-mono text-mono-label uppercase tracking-[0.14em] text-ink-muted;
+  }
+  .input-brutal {
+    @apply w-full border border-line bg-bg-2 px-4 py-3 font-body text-base text-ink outline-none focus:border-ink-muted placeholder:text-ink-faint;
+  }
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+}

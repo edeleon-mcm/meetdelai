@@ -1,0 +1,36 @@
+# meetdelai.com — Edwin De Leon
+
+> Founder of DELAI (DeLeonAI). Builder of AI-native software. Holding company for Found, Modus, BiTES, HostGPT, PAGE, and Munchies. Senior operator who codes, ships, and supports every product end-to-end. Based in South Florida.
+
+DELAI is not a consulting firm — it's a portfolio of standalone AI products that share an intelligence layer (Found), a data layer (Supabase), and an infrastructure layer (Mastra agent runtime on Hostinger + EC2). The site is a React 19 SPA; for full content scrape `/llms-full.txt`.
+
+## What I do
+
+- **Build** — design, code, ship AI-native products end-to-end. Each product in the portfolio runs in production.
+- **Advise** — fractional CTO and advisory engagements for founders building AI-native products. Senior operator perspective, not theory.
+- **Operate** — DELAI owns and runs each product; we don't sell software-as-a-package, we own the experience.
+
+## Portfolio
+
+- **Found** — personal AI / intelligence layer for the portfolio. https://thefoundai.app
+- **Modus** — operator AI; productized engines for SMBs ($2.5k setup + $500/mo). https://modus-chi.vercel.app
+- **BiTES** — AI food tracker; plate-photo nutrition, AI coach, restaurant menu scanning. Live on iOS + Android.
+- **HostGPT** — AI host for short-term rental properties. Voice + chat + ops. https://myhostgpt.com
+- **PAGE** — Stripe Connect Express acceptance for micro-merchants. https://meetpage.app
+- **Munchies** — WhatsApp-first food delivery, Uber Direct certified. https://munchies.pr
+
+## How to work with me
+
+- Email: hello@meetdelai.com
+- Form: https://meetdelai.com/?contact=1
+- I take a small number of engagements at a time.
+
+## Site map
+
+- [Home](https://meetdelai.com/)
+- [Writing](https://meetdelai.com/intelligence) — essays on operator discipline + AI-native building
+
+## Optional
+
+- [Sitemap](https://meetdelai.com/sitemap.xml)
+- [Full content (markdown)](https://meetdelai.com/llms-full.txt)
