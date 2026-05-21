@@ -100,12 +100,12 @@ export function ArticleDetail() {
             ) : null}
 
             <div className="border border-line p-8 mt-16">
-              <p className="label-mono mb-3">Want to work together?</p>
+              <p className="label-mono mb-3">Want to talk shop?</p>
               <h3 className="font-display text-headline-md text-ink">
-                One reply, real answer.
+                Operational AI, applied to your business.
               </h3>
               <p className="mt-3 text-body-md text-ink-muted">
-                Advisory, fractional CTO, or full build engagements.
+                Tell us where the friction is. We'll come back with an honest read.
               </p>
               <button onClick={() => setOpenCta(true)} className="btn-primary mt-6">Start a conversation</button>
             </div>
