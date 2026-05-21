@@ -38,12 +38,28 @@ async function fetchArticles(): Promise<Article[]> {
 }
 
 const PORTFOLIO = [
-  { name: 'Found', tag: 'Personal AI', blurb: 'Intelligence layer for the portfolio.' },
-  { name: 'Modus', tag: 'Operator AI', blurb: 'Productized AI engines for SMBs.' },
-  { name: 'BiTES', tag: 'Food intelligence', blurb: 'AI nutrition tracker, live on iOS + Android.' },
-  { name: 'HostGPT', tag: 'STR copilot', blurb: 'AI host for short-term rentals.' },
-  { name: 'PAGE', tag: 'Micro payments', blurb: 'Stripe Connect Express for micro-merchants.' },
-  { name: 'Munchies', tag: 'Food delivery', blurb: 'WhatsApp ordering, Uber Direct certified.' },
+  { name: 'Found',    tag: 'Operational intelligence',  blurb: 'Operational intelligence for people and teams.' },
+  { name: 'Modus',    tag: 'SMB automation',            blurb: 'Automation systems for SMB operations.' },
+  { name: 'BiTES',    tag: 'Food intelligence',         blurb: 'AI-powered food intelligence and nutrition tracking.' },
+  { name: 'HostGPT',  tag: 'Hospitality AI',            blurb: 'Hospitality AI for guest communication and operations.' },
+  { name: 'PAGE',     tag: 'Payments',                  blurb: 'Modern payment tools for independent operators.' },
+  { name: 'Munchies', tag: 'Conversational ordering',   blurb: 'Conversational ordering and delivery infrastructure.' },
+];
+
+const CAPABILITIES = [
+  { name: 'AI Assistants',                body: 'Voice, chat, and operational AI systems designed around real customer interactions and internal workflows.' },
+  { name: 'Operational Automation',       body: 'Workflow engines that connect fragmented systems, automate repetitive tasks, and reduce operational drag.' },
+  { name: 'Customer Experience Systems',  body: 'Ordering, payments, communication, and service flows designed for modern customer expectations.' },
+  { name: 'Internal Intelligence',        body: 'Knowledge systems that help businesses organize information, preserve context, and operate more intelligently over time.' },
+];
+
+const OPERATING_PRINCIPLES = [
+  'Observability from day one',
+  'Human approval loops where needed',
+  'Workflow reliability over AI hype',
+  'Fast iteration cycles',
+  'Real operational deployment',
+  'Long-term maintainability',
 ];
 
 function Chrome({ children }: { children: React.ReactNode }) {
@@ -73,18 +89,51 @@ function HomePage() {
     <Chrome>
       <main>
         <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-20 sm:pt-32 pb-24">
-          <p className="label-mono mb-8">DELAI · DeLeonAI</p>
+          <p className="label-mono mb-8">DELAI</p>
           <h1 className="font-display text-headline-xl text-ink max-w-4xl">
-            I build AI-native software.
+            Operational AI for real businesses.
           </h1>
-          <p className="mt-8 text-body-lg text-ink-muted max-w-2xl">
-            Elmer De Leon. Founder of DELAI — the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.
+          <p className="mt-8 text-body-lg text-ink-muted max-w-3xl">
+            The next generation of business software will not be dashboards and manual workflows.
+            It will be systems that observe, respond, automate, and operate alongside the business in real time.
           </p>
+          <p className="mt-4 text-body-lg text-ink max-w-3xl">DELAI builds those systems.</p>
         </section>
+
         <section className="border-t border-line">
           <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
-            <p className="label-mono mb-6">The portfolio</p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <p className="label-mono mb-6">Built for operators</p>
+            <h2 className="font-display text-headline-lg text-ink max-w-3xl">
+              Restaurants. Hospitality. Service businesses. Property operations. Local commerce.
+            </h2>
+            <p className="mt-8 text-body-md text-ink-muted max-w-3xl">
+              Businesses that move fast do not need more software tabs. They need operational systems that reduce friction,
+              automate repetitive work, improve customer experience, and help teams move faster with less overhead.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
+            <p className="label-mono mb-6">What DELAI builds</p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {CAPABILITIES.map((c) => (
+                <div key={c.name} className="border border-line p-6">
+                  <h3 className="font-display text-2xl text-ink">{c.name}</h3>
+                  <p className="mt-3 text-sm text-ink-muted">{c.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
+            <p className="label-mono mb-6">Products in production</p>
+            <p className="mt-2 text-body-md text-ink-muted max-w-3xl">
+              Every DELAI product operates as a live testing ground for the systems, infrastructure, and workflows behind the platform.
+            </p>
+            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {PORTFOLIO.map((p) => (
                 <div key={p.name} className="border border-line p-6">
                   <h3 className="font-display text-2xl text-ink">{p.name}</h3>
@@ -93,6 +142,21 @@ function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
+            <p className="label-mono mb-6">How DELAI operates</p>
+            <h2 className="font-display text-headline-lg text-ink">Built for production.</h2>
+            <p className="mt-4 text-body-md text-ink-muted max-w-3xl">
+              The goal is not to generate demos. The goal is to create systems that survive real operational environments.
+            </p>
+            <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {OPERATING_PRINCIPLES.map((p) => (
+                <li key={p} className="border border-line p-5 text-sm text-ink">{p}</li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>
@@ -166,8 +230,8 @@ async function main() {
 
   writeRoute('/', applyTemplate({
     body: renderToStaticMarkup(<HomePage />),
-    title: 'Elmer De Leon — DELAI',
-    description: 'Elmer De Leon builds AI-native software. DELAI is the holding company behind Found, Modus, BiTES, HostGPT, and PAGE.',
+    title: 'DELAI — Operational AI for real businesses',
+    description: 'DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce. Six products in production prove the platform works.',
     canonical: `${ORIGIN}/`,
   }));
   count++;

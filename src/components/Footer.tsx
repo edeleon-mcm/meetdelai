@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 
 const PORTFOLIO = [
-  { name: 'Found', url: 'https://thefoundai.app', tag: 'Personal AI' },
-  { name: 'Modus', url: 'https://modus-chi.vercel.app', tag: 'Operator AI' },
+  { name: 'Found', url: 'https://thefoundai.app', tag: 'Operational intelligence' },
+  { name: 'Modus', url: 'https://modus-chi.vercel.app', tag: 'SMB automation' },
   { name: 'BiTES', url: 'https://bites.mycloudmenu.com', tag: 'Food intelligence' },
-  { name: 'HostGPT', url: 'https://myhostgpt.com', tag: 'STR copilot' },
-  { name: 'PAGE', url: 'https://meetpage.app', tag: 'Micro payments' },
+  { name: 'HostGPT', url: 'https://myhostgpt.com', tag: 'Hospitality AI' },
+  { name: 'PAGE', url: 'https://meetpage.app', tag: 'Payments' },
+  { name: 'Munchies', url: 'https://munchies.pr', tag: 'Conversational ordering' },
 ];
 
 export function Footer() {
@@ -15,7 +16,7 @@ export function Footer() {
         <div className="space-y-3">
           <p className="font-display text-2xl text-ink">DELAI<span className="text-ink-faint">.</span></p>
           <p className="text-sm text-ink-muted max-w-xs">
-            Elmer De Leon. AI consulting, fractional CTO, and full builds — backed by a portfolio of six AI products in production.
+            Operational AI systems for modern businesses.
           </p>
         </div>
         <div>

@@ -65,19 +65,33 @@ function injectJsonLd(data?: Record<string, unknown> | Array<Record<string, unkn
   return () => { tag.remove(); };
 }
 
-const PERSON: Record<string, unknown> = {
+const ORGANIZATION: Record<string, unknown> = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Elmer De Leon',
-  alternateName: 'DELAI',
+  '@type': 'Organization',
+  name: 'DELAI',
+  alternateName: 'DeLeonAI',
+  legalName: 'DeLeonAI Holdings LLC',
   url: 'https://meetdelai.com',
-  jobTitle: 'AI Consultant & Founder',
-  worksFor: { '@type': 'Organization', name: 'DELAI (DeLeonAI)' },
-  description: 'AI consultant, fractional CTO, and full-build engineer. Founder of DELAI, operating six AI products in production (Found, Modus, BiTES, HostGPT, PAGE, Munchies).',
+  email: 'hello@meetdelai.com',
+  description: 'DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce — voice + chat assistants, workflow automation, customer-experience systems, and internal intelligence.',
+  brand: 'DELAI',
+  founder: { '@type': 'Person', name: 'Elmer De Leon' },
+  makesOffer: [
+    { '@type': 'Offer', name: 'Found', description: 'Operational intelligence for people and teams.' },
+    { '@type': 'Offer', name: 'Modus', description: 'Automation systems for SMB operations.' },
+    { '@type': 'Offer', name: 'BiTES', description: 'AI-powered food intelligence and nutrition tracking.' },
+    { '@type': 'Offer', name: 'HostGPT', description: 'Hospitality AI for guest communication and operations.' },
+    { '@type': 'Offer', name: 'PAGE', description: 'Modern payment tools for independent operators.' },
+    { '@type': 'Offer', name: 'Munchies', description: 'Conversational ordering and delivery infrastructure.' },
+  ],
 };
 
 export function personSchema() {
-  return PERSON;
+  return ORGANIZATION;
+}
+
+export function organizationSchema() {
+  return ORGANIZATION;
 }
 
 export function articleSchema(opts: { title: string; description: string; url: string; datePublished: string; image?: string }) {
@@ -88,8 +102,8 @@ export function articleSchema(opts: { title: string; description: string; url: s
     description: opts.description,
     url: opts.url,
     datePublished: opts.datePublished,
-    author: PERSON,
-    publisher: PERSON,
+    author: { '@type': 'Person', name: 'Elmer De Leon' },
+    publisher: ORGANIZATION,
     ...(opts.image ? { image: opts.image } : {}),
   };
 }

@@ -14,7 +14,7 @@ export function TopNav() {
         </a>
       </div>
       <Link to="/?contact=1" className="btn-primary text-xs">
-        Work with me
+        Start a conversation
       </Link>
     </nav>
   );

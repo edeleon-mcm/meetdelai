@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { TopNav } from '@/components/TopNav';
 import { Footer } from '@/components/Footer';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
@@ -15,61 +15,77 @@ interface PortfolioItem {
 const PORTFOLIO: PortfolioItem[] = [
   {
     name: 'Found',
-    tag: 'Personal AI',
-    blurb: 'Intelligence layer for operators. Tracks projects, people, and decisions so context never gets lost between sessions.',
+    tag: 'Operational intelligence',
+    blurb: 'Operational intelligence for people and teams.',
     url: 'https://thefoundai.app',
   },
   {
     name: 'Modus',
-    tag: 'Operator AI',
-    blurb: 'Productized AI engines for SMBs — goal-driven automations sold as $2.5k setup + $500/mo.',
+    tag: 'SMB automation',
+    blurb: 'Automation systems for SMB operations.',
     url: 'https://modus-chi.vercel.app',
   },
   {
     name: 'BiTES',
     tag: 'Food intelligence',
-    blurb: 'AI food tracker live on iOS + Android. Plate-photo nutrition, AI coach, menu scanning.',
+    blurb: 'AI-powered food intelligence and nutrition tracking.',
     url: 'https://bites.mycloudmenu.com',
   },
   {
     name: 'HostGPT',
-    tag: 'STR copilot',
-    blurb: 'AI host for short-term rentals. Voice + chat + ops, white-labeled per property.',
+    tag: 'Hospitality AI',
+    blurb: 'Hospitality AI for guest communication and operations.',
     url: 'https://myhostgpt.com',
   },
   {
     name: 'PAGE',
-    tag: 'Micro payments',
-    blurb: 'Stripe Connect Express acceptance for micro-merchants who don\'t want a full POS.',
+    tag: 'Payments',
+    blurb: 'Modern payment tools for independent operators.',
     url: 'https://meetpage.app',
   },
   {
     name: 'Munchies',
-    tag: 'Food delivery',
-    blurb: 'WhatsApp-first restaurant ordering. Uber Direct certified.',
+    tag: 'Conversational ordering',
+    blurb: 'Conversational ordering and delivery infrastructure.',
     url: 'https://munchies.pr',
   },
 ];
 
-const SERVICES = [
+const CAPABILITIES = [
   {
-    name: 'Advisory',
-    tag: 'Recurring sessions',
-    body: 'Bring me the hard calls. Architecture choices, build/buy decisions, agent design, hiring. Senior operator perspective from someone in the trenches every day.',
-    fit: 'Founders 0→1 on an AI-native product.',
+    name: 'AI Assistants',
+    body: 'Voice, chat, and operational AI systems designed around real customer interactions and internal workflows.',
   },
   {
-    name: 'Fractional CTO',
-    tag: '1–3 month engagement',
-    body: 'Embedded with your team to set up the engineering foundation — agent registry, deploy harness, telemetry, validation patterns — so you can ship without me after.',
-    fit: 'Seed-stage teams who need senior leadership without the full hire.',
+    name: 'Operational Automation',
+    body: 'Workflow engines that connect fragmented systems, automate repetitive tasks, and reduce operational drag.',
   },
   {
-    name: 'Build engagement',
-    tag: 'DELAI builds it',
-    body: 'I design and build the product end-to-end. You get a working AI-native system, not a slide deck. Handoff when ready, or DELAI keeps running it.',
-    fit: 'Operators who know what they need but don\'t have an engineering team.',
+    name: 'Customer Experience Systems',
+    body: 'Ordering, payments, communication, and service flows designed for modern customer expectations.',
   },
+  {
+    name: 'Internal Intelligence',
+    body: 'Knowledge systems that help businesses organize information, preserve context, and operate more intelligently over time.',
+  },
+];
+
+const OPERATING_PRINCIPLES = [
+  'Observability from day one',
+  'Human approval loops where needed',
+  'Workflow reliability over AI hype',
+  'Fast iteration cycles',
+  'Real operational deployment',
+  'Long-term maintainability',
+];
+
+const NATIVE_DIMENSIONS = [
+  'Speed',
+  'Automation',
+  'Operational visibility',
+  'Intelligent workflows',
+  'Lower friction',
+  'Better customer experiences',
 ];
 
 export function Landing() {
@@ -84,19 +100,25 @@ export function Landing() {
     }
   }, [params, setParams]);
 
+  const scrollToProducts = () => {
+    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <>
       <Seo
-        title="DELAI — AI consulting that ships"
-        description="Elmer De Leon. AI consulting and fractional CTO for founders building AI-native products. Six products in production prove the playbook works."
+        title="DELAI — Operational AI for real businesses"
+        description="DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce. Six products in production prove the platform works."
         jsonLd={personSchema()}
       />
       <TopNav />
       <main>
-        <Hero onCta={() => setOpen(true)} />
-        <Services onCta={() => setOpen(true)} />
+        <Hero onCta={() => setOpen(true)} onExplore={scrollToProducts} />
+        <Operators />
+        <Capabilities />
         <Portfolio />
-        <Approach />
+        <Operations />
+        <NativeNotDecorated />
         <FinalCta onCta={() => setOpen(true)} />
       </main>
       <Footer />
@@ -105,72 +127,69 @@ export function Landing() {
   );
 }
 
-function Hero({ onCta }: { onCta: () => void }) {
+function Hero({ onCta, onExplore }: { onCta: () => void; onExplore: () => void }) {
   return (
     <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-20 sm:pt-32 pb-24 sm:pb-32">
-      <p className="label-mono mb-8">DELAI · DeLeonAI</p>
+      <p className="label-mono mb-8">DELAI</p>
       <h1 className="font-display text-headline-xl text-ink max-w-4xl">
-        AI consulting<br />
-        <span className="italic text-ink-muted">that ships.</span>
+        Operational AI<br />
+        <span className="italic text-ink-muted">for real businesses.</span>
       </h1>
-      <p className="mt-8 text-body-lg text-ink-muted max-w-2xl">
-        I help founders and operators build AI-native products that survive production.
-        Advisory, fractional CTO, and full build engagements — backed by a portfolio
-        of six AI products I run end-to-end.
+      <p className="mt-8 text-body-lg text-ink-muted max-w-3xl">
+        The next generation of business software will not be dashboards and manual workflows.
+        It will be systems that observe, respond, automate, and operate alongside the business
+        in real time.
+      </p>
+      <p className="mt-4 text-body-lg text-ink max-w-3xl">
+        DELAI builds those systems.
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
         <button onClick={onCta} className="btn-primary">Start a conversation</button>
-        <Link to="#services" className="btn-ghost">See services</Link>
-      </div>
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-        <Stat label="Products in production" value="6" />
-        <Stat label="AI agents shipped" value="30+" />
-        <Stat label="Years building" value="10+" />
-        <Stat label="Based in" value="South Florida" />
+        <button onClick={onExplore} className="btn-ghost">Explore products</button>
       </div>
     </section>
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Operators() {
   return (
-    <div className="border-t border-line pt-4">
-      <p className="font-display text-2xl text-ink">{value}</p>
-      <p className="label-mono mt-1">{label}</p>
-    </div>
+    <section className="border-t border-line bg-bg-2">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
+        <p className="label-mono mb-6">Built for operators</p>
+        <h2 className="font-display text-headline-lg text-ink max-w-3xl">
+          Restaurants. Hospitality. Service businesses.<br />
+          Property operations. Local commerce.
+        </h2>
+        <div className="mt-10 max-w-3xl space-y-6 text-body-md text-ink-muted">
+          <p>
+            Businesses that move fast do not need more software tabs. They need operational
+            systems that reduce friction, automate repetitive work, improve customer experience,
+            and help teams move faster with less overhead.
+          </p>
+          <p className="text-ink">
+            That is the shift DELAI is built around.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
-function Services({ onCta }: { onCta: () => void }) {
+function Capabilities() {
   return (
-    <section id="services" className="border-t border-line bg-bg-2">
+    <section className="border-t border-line">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
-        <p className="label-mono mb-6">Engagements</p>
+        <p className="label-mono mb-6">What DELAI builds</p>
         <h2 className="font-display text-headline-lg text-ink max-w-2xl">
-          Three ways to work together.
+          Four layers of operational AI.
         </h2>
-        <p className="mt-6 text-body-md text-ink-muted max-w-2xl">
-          Pricing happens in conversation — every engagement scopes to your problem,
-          your team, and your timeline. I take a small number at a time.
-        </p>
-        <div className="mt-16 grid gap-px bg-line">
-          {SERVICES.map((s) => (
-            <div key={s.name} className="bg-bg-2 p-8 grid gap-4 md:grid-cols-[1fr_2fr]">
-              <div>
-                <h3 className="font-display text-2xl text-ink">{s.name}</h3>
-                <p className="label-mono mt-2">{s.tag}</p>
-              </div>
-              <div>
-                <p className="text-body-md text-ink-muted">{s.body}</p>
-                <p className="mt-4 font-mono text-mono-label text-ink-faint">
-                  Best fit: {s.fit}
-                </p>
-              </div>
+        <div className="mt-16 grid gap-px bg-line sm:grid-cols-2">
+          {CAPABILITIES.map((c) => (
+            <div key={c.name} className="bg-bg p-8">
+              <h3 className="font-display text-2xl text-ink">{c.name}</h3>
+              <p className="mt-4 text-body-md text-ink-muted">{c.body}</p>
             </div>
           ))}
-        </div>
-        <div className="mt-12">
-          <button onClick={onCta} className="btn-primary">Tell me what you're building</button>
         </div>
       </div>
     </section>
@@ -179,18 +198,18 @@ function Services({ onCta }: { onCta: () => void }) {
 
 function Portfolio() {
   return (
-    <section className="border-t border-line">
+    <section id="products" className="border-t border-line bg-bg-2 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
           <div>
-            <p className="label-mono mb-6">Proof, not slides</p>
+            <p className="label-mono mb-6">Products in production</p>
             <h2 className="font-display text-headline-lg text-ink">
-              Six AI products,<br />all in production.
+              Six products,<br />
+              <span className="italic text-ink-muted">all live.</span>
             </h2>
             <p className="mt-6 text-body-md text-ink-muted max-w-md">
-              I don't teach AI in theory — I ship it. Every product in the DELAI
-              portfolio is live, paying for itself, and built on the same agent
-              architecture I bring to client work.
+              Every DELAI product operates as a live testing ground for the systems,
+              infrastructure, and workflows behind the platform.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -226,40 +245,56 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
   );
 }
 
-function Approach() {
-  const principles = [
-    {
-      title: 'Discipline reachable from one place.',
-      body: 'Every agent flows through one registry. Every product writes to one database. The gold-standard library is worthless if a wrapper sits next to it — and that\'s the first thing I audit when I walk in.',
-    },
-    {
-      title: 'Ship the sandbox first.',
-      body: 'I never gate on Apple entitlements, live API keys, custom domains, or vendor approvals. Mock the integration boundary and ship a working demo. The real keys arrive after the demo works.',
-    },
-    {
-      title: 'Four PRs, one A-grade.',
-      body: 'PR-D for the harness first, then PR-A/B/C for capability. Closed-loop validation. Telemetry from day one. Audits drive the plan, not the other way around — I learned this shipping production AI, not reading about it.',
-    },
-    {
-      title: 'AI-native or nothing.',
-      body: 'If the model is the product\'s only moat, the product is wrong. I rate every initiative against seven YC AI-native principles before scoping work — and tell you honestly which products don\'t need an AI build at all.',
-    },
-  ];
+function Operations() {
+  return (
+    <section className="border-t border-line">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
+        <p className="label-mono mb-6">How DELAI operates</p>
+        <h2 className="font-display text-headline-lg text-ink max-w-3xl">
+          Built for production.
+        </h2>
+        <div className="mt-8 max-w-3xl space-y-4 text-body-md text-ink-muted">
+          <p>
+            The goal is not to generate demos. The goal is to create systems that survive
+            real operational environments.
+          </p>
+          <p className="text-ink">That means:</p>
+        </div>
+        <ul className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+          {OPERATING_PRINCIPLES.map((p) => (
+            <li key={p} className="bg-bg p-6 flex items-baseline gap-4">
+              <span className="font-mono text-mono-label text-ink-faint">·</span>
+              <span className="text-body-md text-ink">{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function NativeNotDecorated() {
   return (
     <section className="border-t border-line bg-bg-2">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
-        <p className="label-mono mb-6">How I work</p>
-        <h2 className="font-display text-headline-lg text-ink max-w-2xl">
-          What you get when you work with me.
+        <p className="label-mono mb-6">AI-native, not AI-decorated</p>
+        <h2 className="font-display text-headline-lg text-ink max-w-3xl">
+          Most businesses do not need <span className="italic text-ink-muted">"AI features."</span>
         </h2>
-        <div className="mt-16 grid gap-12 md:grid-cols-2">
-          {principles.map((p) => (
-            <div key={p.title}>
-              <h3 className="font-display text-xl text-ink">{p.title}</h3>
-              <p className="mt-3 text-body-md text-ink-muted">{p.body}</p>
-            </div>
+        <p className="mt-8 text-body-md text-ink max-w-3xl">
+          They need systems designed around:
+        </p>
+        <ul className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+          {NATIVE_DIMENSIONS.map((d) => (
+            <li key={d} className="bg-bg-2 p-6 flex items-baseline gap-4">
+              <span className="font-mono text-mono-label text-ink-faint">·</span>
+              <span className="text-body-md text-ink">{d}</span>
+            </li>
           ))}
-        </div>
+        </ul>
+        <p className="mt-12 text-body-md text-ink-muted max-w-3xl">
+          DELAI exists to build that future.
+        </p>
       </div>
     </section>
   );
@@ -269,15 +304,19 @@ function FinalCta({ onCta }: { onCta: () => void }) {
   return (
     <section className="border-t border-line">
       <div className="mx-auto max-w-3xl px-5 sm:px-8 py-24 sm:py-32 text-center">
-        <p className="label-mono mb-6">Let's talk</p>
+        <p className="label-mono mb-6">Let's build what's next</p>
         <h2 className="font-display text-headline-lg text-ink">
-          You bring the problem.<br />
-          I'll bring the playbook.
+          The businesses that adapt early<br />
+          will not look like traditional software companies.
         </h2>
-        <p className="mt-6 text-body-md text-ink-muted max-w-xl mx-auto">
-          One reply, real answer. No drip sequences, no discovery deck, no
-          "let me circle back with the team." It's just me.
-        </p>
+        <div className="mt-8 max-w-2xl mx-auto space-y-4 text-body-md text-ink-muted">
+          <p>
+            They will look operationally lighter, faster, and more intelligent at every layer.
+          </p>
+          <p className="text-ink">
+            That transition has already started.
+          </p>
+        </div>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button onClick={onCta} className="btn-primary">Start a conversation</button>
           <a href="mailto:hello@meetdelai.com" className="btn-ghost">hello@meetdelai.com</a>
