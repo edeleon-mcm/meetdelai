@@ -5,52 +5,6 @@ import { Footer } from '@/components/Footer';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
 import { Seo, personSchema } from '@/components/Seo';
 
-interface PortfolioItem {
-  name: string;
-  tag: string;
-  blurb: string;
-  url?: string;
-}
-
-const PORTFOLIO: PortfolioItem[] = [
-  {
-    name: 'Found',
-    tag: 'Operational intelligence',
-    blurb: 'Operational intelligence for people and teams.',
-    url: 'https://thefoundai.app',
-  },
-  {
-    name: 'Modus',
-    tag: 'SMB automation',
-    blurb: 'Automation systems for SMB operations.',
-    url: 'https://modus-chi.vercel.app',
-  },
-  {
-    name: 'BiTES',
-    tag: 'Food intelligence',
-    blurb: 'AI-powered food intelligence and nutrition tracking.',
-    url: 'https://bites.mycloudmenu.com',
-  },
-  {
-    name: 'HostGPT',
-    tag: 'Hospitality AI',
-    blurb: 'Hospitality AI for guest communication and operations.',
-    url: 'https://myhostgpt.com',
-  },
-  {
-    name: 'PAGE',
-    tag: 'Payments',
-    blurb: 'Modern payment tools for independent operators.',
-    url: 'https://meetpage.app',
-  },
-  {
-    name: 'Munchies',
-    tag: 'Conversational ordering',
-    blurb: 'Conversational ordering and delivery infrastructure.',
-    url: 'https://munchies.pr',
-  },
-];
-
 const CAPABILITIES = [
   {
     name: 'AI Assistants',
@@ -100,23 +54,18 @@ export function Landing() {
     }
   }, [params, setParams]);
 
-  const scrollToProducts = () => {
-    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <>
       <Seo
         title="DELAI — Operational AI for real businesses"
-        description="DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce. Six products in production prove the platform works."
+        description="DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce."
         jsonLd={personSchema()}
       />
       <TopNav />
       <main>
-        <Hero onCta={() => setOpen(true)} onExplore={scrollToProducts} />
+        <Hero onCta={() => setOpen(true)} />
         <Operators />
         <Capabilities />
-        <Portfolio />
         <Operations />
         <NativeNotDecorated />
         <FinalCta onCta={() => setOpen(true)} />
@@ -127,7 +76,7 @@ export function Landing() {
   );
 }
 
-function Hero({ onCta, onExplore }: { onCta: () => void; onExplore: () => void }) {
+function Hero({ onCta }: { onCta: () => void }) {
   return (
     <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-20 sm:pt-32 pb-24 sm:pb-32">
       <p className="label-mono mb-8">DELAI</p>
@@ -145,7 +94,6 @@ function Hero({ onCta, onExplore }: { onCta: () => void; onExplore: () => void }
       </p>
       <div className="mt-10 flex flex-wrap gap-4">
         <button onClick={onCta} className="btn-primary">Start a conversation</button>
-        <button onClick={onExplore} className="btn-ghost">Explore products</button>
       </div>
     </section>
   );
@@ -193,55 +141,6 @@ function Capabilities() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Portfolio() {
-  return (
-    <section id="products" className="border-t border-line bg-bg-2 scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24 sm:py-32">
-        <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <p className="label-mono mb-6">Products in production</p>
-            <h2 className="font-display text-headline-lg text-ink">
-              Six products,<br />
-              <span className="italic text-ink-muted">all live.</span>
-            </h2>
-            <p className="mt-6 text-body-md text-ink-muted max-w-md">
-              Every DELAI product operates as a live testing ground for the systems,
-              infrastructure, and workflows behind the platform.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {PORTFOLIO.map((p) => (
-              <PortfolioCard key={p.name} item={p} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PortfolioCard({ item }: { item: PortfolioItem }) {
-  const Wrapper: any = item.url ? 'a' : 'div';
-  const wrapperProps = item.url ? { href: item.url, target: '_blank', rel: 'noreferrer' } : {};
-  return (
-    <Wrapper
-      {...wrapperProps}
-      className="block border border-line bg-bg p-6 transition-colors hover:border-ink-muted"
-    >
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-2xl text-ink">{item.name}</h3>
-        <p className="label-mono">{item.tag}</p>
-      </div>
-      <p className="mt-4 text-sm text-ink-muted leading-relaxed">{item.blurb}</p>
-      {item.url ? (
-        <p className="mt-6 font-mono text-mono-label text-ink-faint">
-          {new URL(item.url).hostname} ↗
-        </p>
-      ) : null}
-    </Wrapper>
   );
 }
 

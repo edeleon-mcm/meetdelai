@@ -127,23 +127,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="border-t border-line">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
-            <p className="label-mono mb-6">Products in production</p>
-            <p className="mt-2 text-body-md text-ink-muted max-w-3xl">
-              Every DELAI product operates as a live testing ground for the systems, infrastructure, and workflows behind the platform.
-            </p>
-            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PORTFOLIO.map((p) => (
-                <div key={p.name} className="border border-line p-6">
-                  <h3 className="font-display text-2xl text-ink">{p.name}</h3>
-                  <p className="label-mono mt-1">{p.tag}</p>
-                  <p className="mt-4 text-sm text-ink-muted">{p.blurb}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Products in production — hidden, dedicated /products page coming */}
 
         <section className="border-t border-line">
           <div className="mx-auto max-w-6xl px-5 sm:px-8 py-24">
