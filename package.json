@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "tsx scripts/generate-sitemap.ts",
+    "prebuild": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-llms-txt.ts",
     "build": "tsc -b && vite build",
     "postbuild": "tsx scripts/prerender.tsx",
     "sitemap": "tsx scripts/generate-sitemap.ts",
+    "llms": "tsx scripts/generate-llms-txt.ts",
     "prerender": "tsx scripts/prerender.tsx",
     "preview": "vite preview --host",
     "lint": "eslint ."
