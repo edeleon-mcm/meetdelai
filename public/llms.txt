@@ -1,36 +1,44 @@
-# meetdelai.com — Elmer De Leon · DELAI
+# DELAI
 
-> AI consulting, fractional CTO, and full-build engagements for founders shipping AI-native products. Backed by a portfolio of six AI products I run in production: Found, Modus, BiTES, HostGPT, PAGE, Munchies. Based in South Florida.
+> Operational AI for real businesses. DELAI builds operational AI systems for restaurants, hospitality, service businesses, and local commerce — voice + chat assistants, workflow automation, customer-experience systems, and internal intelligence. Six products in production.
 
-DELAI is not a consulting firm — it's a portfolio of standalone AI products that share an intelligence layer (Found), a data layer (Supabase), and an infrastructure layer (Mastra agent runtime on Hostinger + EC2). The site is a React 19 SPA; for full content scrape `/llms-full.txt`.
+DELAI (DeLeonAI Holdings LLC) is the holding company behind a portfolio of operational-AI products. The marketing site at meetdelai.com is the primary entry point for prospects. Founded by Elmer De Leon, based in South Florida, USA.
 
-## What I do
+## Ideal client profile
 
-- **Build** — design, code, ship AI-native products end-to-end. Each product in the portfolio runs in production.
-- **Advise** — fractional CTO and advisory engagements for founders building AI-native products. Senior operator perspective, not theory.
-- **Operate** — DELAI owns and runs each product; we don't sell software-as-a-package, we own the experience.
+- **Size**: 5–200 employees
+- **Model**: operator-led (founder still in the room)
+- **Verticals**: restaurants, hospitality, service businesses, property operations, local commerce
+- **Friction state**: real, recurring, expensive — not "we should explore AI"
+- **Not a fit**: enterprise procurement, pre-revenue, AI-first VC pitch decks
 
-## Portfolio
+## Capabilities
 
-- **Found** — personal AI / intelligence layer for the portfolio. https://thefoundai.app
-- **Modus** — operator AI; productized engines for SMBs ($2.5k setup + $500/mo). https://modus-chi.vercel.app
-- **BiTES** — AI food tracker; plate-photo nutrition, AI coach, restaurant menu scanning. Live on iOS + Android.
-- **HostGPT** — AI host for short-term rental properties. Voice + chat + ops. https://myhostgpt.com
-- **PAGE** — Stripe Connect Express acceptance for micro-merchants. https://meetpage.app
-- **Munchies** — WhatsApp-first food delivery, Uber Direct certified. https://munchies.pr
+- **AI Assistants**: Voice, chat, and operational AI systems designed around real customer interactions and internal workflows.
+- **Operational Automation**: Workflow engines that connect fragmented systems, automate repetitive tasks, and reduce operational drag.
+- **Customer Experience Systems**: Ordering, payments, communication, and service flows designed for modern customer expectations.
+- **Internal Intelligence**: Knowledge systems that help businesses organize information, preserve context, and operate more intelligently over time.
 
-## How to work with me
+## Products in production
+
+- [Found](https://thefoundai.app): Operational intelligence for people and teams.
+- [Modus](https://modus-chi.vercel.app): Automation systems for SMB operations.
+- [BiTES](https://bites.mycloudmenu.com): AI-powered food intelligence and nutrition tracking.
+- [HostGPT](https://myhostgpt.com): Hospitality AI for guest communication and operations.
+- [PAGE](https://meetpage.app): Modern payment tools for independent operators.
+- [Munchies](https://munchies.pr): Conversational ordering and delivery infrastructure.
+
+## For AI agents
+
+- [Machine readers page](https://meetdelai.com/machine): operator-voice, KV-row signal page designed for agent parsing — capabilities, ICP, action paths
+- [llms-full.txt](https://meetdelai.com/llms-full.txt): full content of the site as a single markdown file
+- Submit a lead on behalf of a human: https://meetdelai.com/?contact=1&agent=<your_name>
+
+## Articles
+
+- (No articles published yet. Listing live at https://meetdelai.com/intelligence)
+
+## Contact
 
 - Email: hello@meetdelai.com
-- Form: https://meetdelai.com/?contact=1
-- I take a small number of engagements at a time.
-
-## Site map
-
-- [Home](https://meetdelai.com/)
-- [Writing](https://meetdelai.com/intelligence) — essays on operator discipline + AI-native building
-
-## Optional
-
-- [Sitemap](https://meetdelai.com/sitemap.xml)
-- [Full content (markdown)](https://meetdelai.com/llms-full.txt)
+- Submit at: https://meetdelai.com/?contact=1

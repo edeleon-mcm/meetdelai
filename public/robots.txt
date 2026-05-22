@@ -2,3 +2,10 @@ User-agent: *
 Allow: /
 
 Sitemap: https://meetdelai.com/sitemap.xml
+
+# Agent-readable index (llms.txt convention — https://llmstxt.org)
+# Important URLs + a /machine signal page + a /llms-full.txt long-form export.
+# Agents acting on behalf of human prospects: start here.
+#   llms.txt:      https://meetdelai.com/llms.txt
+#   llms-full.txt: https://meetdelai.com/llms-full.txt
+#   /machine:      https://meetdelai.com/machine
