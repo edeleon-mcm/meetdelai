@@ -40,6 +40,7 @@ async function main() {
   const urls: string[] = [
     urlBlock('/', 1.0, 'weekly'),
     urlBlock('/intelligence', 0.9, 'daily'),
+    urlBlock('/machine', 0.6, 'monthly'),
   ];
   for (const a of articles) {
     urls.push(urlBlock(`/intelligence/${a.slug}`, 0.8, 'monthly', (a.published_at ?? '').slice(0, 10) || today));
